@@ -15,10 +15,16 @@ def get_birthdays():
     friends_birthdays = {
         'goku': '24 March',
         'vegeta': '1 April',
-        'whis': '2 July',
+        'broly': '2 July',
         'gohan': '9 Jan'
     }
     return friends_birthdays[name.lower()]
 
 print(get_birthdays())
+```
+
+###### Modify your program from Question 1 of this section to load the birthday dictionary from a JSON file on disk, rather than having the dictionary defined in the program. Finally, ask the user for another super sayain’s name and birthday to add to the dictionary, and update the JSON file you have on disk with the scientist’s name. If you run the program multiple times and keep adding new names, your JSON file should keep getting bigger and bigger.
+
+```
+
 ```
