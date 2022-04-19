@@ -61,3 +61,9 @@ with open ('Q2-json.json') as json_file:
     counter = Counter(months)
     print(dict(counter))
 ```
+
+###### 4. You have a list: a = [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]. Write one line of Python that takes this list a and makes a new list that has only the even elements of this list in it.
+
+```
+print([is_even for is_even in a if is_even%2 == 0])
+```
