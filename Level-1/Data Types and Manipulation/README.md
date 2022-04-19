@@ -26,5 +26,18 @@ print(get_birthdays())
 ###### Modify your program from Question 1 of this section to load the birthday dictionary from a JSON file on disk, rather than having the dictionary defined in the program. Finally, ask the user for another super sayain’s name and birthday to add to the dictionary, and update the JSON file you have on disk with the scientist’s name. If you run the program multiple times and keep adding new names, your JSON file should keep getting bigger and bigger.
 
 ```
+import json
 
+with open('Q2-json.json') as json_file:
+    dictionary = json.load(json_file)
+
+def get_birthdays():
+    name = input("Enter the name of the saiyan: \n")
+    birthday = input("Enter the birthday of the saiyan: \n")
+    dictionary['data']['friends_birthdays'][name] = birthday
+    json_file = open('Q2-json.json', 'w')
+    json.dump(dictionary, json_file, indent=2)
+    json_file.close()
+
+get_birthdays()
 ```
