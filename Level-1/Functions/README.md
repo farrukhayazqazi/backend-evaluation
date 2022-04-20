@@ -19,6 +19,8 @@ def generateFibonacci():
 print(generateFibonacci())
 
 ```
+
+---
 ###### 2. What is the difference between a parameter and an argument?
 
 **parameters** are the placeholders that we declare at the time of defining a function.
@@ -32,11 +34,12 @@ def function(param1, param2):   // these are parameters
 
 function(2, 3)   // these are arguments
 ```
-
+---
 ###### 3. All functions in Python by default return …?
 
 All functions in python return the value **None** if any explicit return value is not provided
 
+---
 ###### 4. What are keyword arguments and when should we use them?
 
 Keyword arguments are passed with their specific parameter names. 
@@ -45,6 +48,7 @@ Why should one use them?
 
 Unlike positional arguments, keyword arguments doesn't have to do anything with the position of the argument, all that matters is that you have the right parameter name for the right argument.
 
+---
 ###### 5. How can we make a parameter of a function optional?
 
 We can use **optional arguments** that has a default value. We can specify the default value at the time of defining the function. So if that optional argument is not provided at the time of passing argument that optional argument will use the default value instead.
@@ -59,7 +63,7 @@ print(greet_user('Farrukh Ayaz'))       // here if we do not pass the text argum
 ```
 we can use ***args** if we want to pass any arbitirary number of arguments (to perform operations on a tuple) and similary we can pass ****kwargs** for keyword arguments (to perform actions on a dictionary).
 
-
+---
 ###### 6. What happens when we prefix a parameter with an asterisk (*)?
 
 if we prefix a parameter with an asterisk (*), essentially what that means is that we are setting the parameter to recieve an arbitarary number of arguments that can be used as a tuple to perform operations on it and they are represented by ***args**
@@ -73,7 +77,7 @@ def check(*args):
     
 print(check('arg'))
 ```
-
+---
 ###### 7. What about two asterisks (**)?
 
 if we prefix a parameter with two asterisks (**), this means that we are setting the parameter to recieve an arbitarary number of keyword arguments that can be used as a dictionary to perform operations on and they are represented by ****kwargs**
@@ -92,7 +96,7 @@ bio = {
     
 print(check(myself=bio))
 ```
-
+---
 ###### 8. Write a function that prints all the prime numbers between 0 and limit where the limit is a parameter.
 
 ```
@@ -104,3 +108,4 @@ for is_prime_number in range (2, limit+1):
     else:
         print(is_prime_number)
 ```
+---
