@@ -55,7 +55,7 @@ for data in user_data:
 
     try:
         if user['username'] in validated_users:
-            raise DuplicateUsername
+            raise DuplicateUserName
         if user['age'] <= 0:
             raise InvalidAge
         if user['age'] < 16:
