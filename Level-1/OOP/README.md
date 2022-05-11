@@ -83,7 +83,7 @@ print(validated_users)
 ```
 
 
-###### Write an “abstract” class, Box, and use it to define some methods which any box object should have: add, for adding any number of items to the box, empty, for taking all the items out of the box and returning them as a list, and count, for counting the items which are currently in the box. Write a simple Item the class which has a name attribute and a value attribute – you can assume that all the items you will use will be Item objects. Now write two subclasses of Box which use different underlying collections to store items: ListBox should use a list, and DictBox should use a dict.
+###### 2. Write an “abstract” class, Box, and use it to define some methods which any box object should have: add, for adding any number of items to the box, empty, for taking all the items out of the box and returning them as a list, and count, for counting the items which are currently in the box. Write a simple Item the class which has a name attribute and a value attribute – you can assume that all the items you will use will be Item objects. Now write two subclasses of Box which use different underlying collections to store items: ListBox should use a list, and DictBox should use a dict.
 
 ```
 from abc import ABC, abstractmethod
@@ -149,5 +149,36 @@ list_box.empty()
 dict_box.count()
 list_box.count()
 
+
+```
+
+###### 3. Extending question 2 of this section, Write a function, repack_boxes, which takes any number of boxes as parameters, gathers up all the items they contain, and redistributes them as evenly as possible over all the boxes. Order is unimportant. There are multiple ways of doing this. Test your code a ListBox with 20 items, a ListBox with 9 items and a DictBox with 5 items. You should end up with two boxes with 11 items each, and one box with 12 items.
+
+```
+def repack_boxes(*boxes):
+
+    total_boxes = len(boxes)
+    items_count = 0
+    avg_count = 0
+    total_items = []
+    
+    for box in boxes:
+        items_count += box.count()
+        for item in box.items:
+            total_items.append(item)
+            
+    avg_count = int(items_count/total_boxes)
+    
+    for box in boxes:
+        box.empty()
+        while(True):
+            if (box.count() != avg_count and len(total_items)):
+                box.add(total_items.pop(0))
+            else:
+                break
+    
+    # adding remaining items in last box
+    for item in total_items:
+        boxes[len(boxes)-1].add(item)
 
 ```
